@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my test html</title>
+</head>
+<body>
+    <script>
+        function debug(msg) {
+            var log = document.getElementById("debuglog");
+            if (!log) {
+                log = document.createElement("div");
+                log.id = "debuglog";
+                log.innerHTML = "<h1>Debug log</h1>";
+                document.body.appendChild(log);
+            }
+            var pre = document.createElement("prev");
+            var text = document.createTextNode(msg);
+            var newLine = document.createElement("br");
+            pre.appendChild(text);
+            pre.appendChild(newLine);
+            log.appendChild(pre);
+        }
+
+        function debuglog() {
+            debug(Date());
+        }
+
+        setInterval(function() {
+            debuglog();
+        }, 3000);
+    </script>
+</body>
+</html>
