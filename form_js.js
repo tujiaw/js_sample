@@ -5,20 +5,29 @@
 
 
 function myTest() {
-    var obj = {};
+    //var obj = {};
+    //
+    //obj.name = $('input[name=name]').val();
+    //
+    //obj.email = $('input[name=email]').val();
+    //
+    //obj.password = $('input[name=password]').val();
+    //
+    //obj.gender = $('input[name=gender]:checked').val();
+    //
+    //obj.city = $('select[name=city] option:selected').text();
+    //
+    //alert(JSON.stringify(obj));
+    //return true;
 
-    obj.name = $('input[name=name]').val();
+    var json={};
+    var input = $('#test-form :input[type!=submit]');
+    input.map(function(){
+        if(this.type !== "radio" || this.checked){   json[this.name] = this.value; }
+    });
 
-    obj.email = $('input[name=email]').val();
-
-    obj.password = $('input[name=password]').val();
-
-    obj.gender = $('input[name=gender]:checked').val();
-
-    obj.city = $('select[name=city] option:selected').text();
-
-    alert(JSON.stringify(obj));
-    return true;
+    json=JSON.stringify(json);
+    alert(json);
 }
 
 
