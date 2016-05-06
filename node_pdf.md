@@ -22,7 +22,7 @@ console.log('listen on:' + PORT);
 </pre>
 
 
-···
+```
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
@@ -96,4 +96,4 @@ router.get('/category', function(req, res, next) {
 });
 
 module.exports = router;
-···
+```
