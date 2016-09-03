@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Image Gallery</title>
+    <style media="screen">
+      #myimage {
+        width: 800px;
+      }
+      .inlineBox {
+        display: inline-block;
+        vertical-align: top;
+      }
+    </style>
+</head>
+
+<body>
+    <h1>Snapshots</h1>
+    <p title="a gentle reminder">Dno't forget</p>
+    <div class="content">
+      <div class="left inlineBox">
+        <ul>
+            <li><a href="images/1.jpg" title="first" onclick="showPic(this); return false;">first</a></li>
+            <li><a href="images/2.jpg" title="second" onclick="showPic(this); return false;">second</a></li>
+            <li><a href="images/3.jpg" title="third" onclick="showPic(this); return false;">third</a></li>
+            <li><a href="images/4.jpg" title="four" onclick="showPic(this); return false;">four</a></li>
+        </ul>
+      </div>
+      <div class="right inlineBox">
+        <img id="myimage" src="images/1.jpg" alt="my image" />
+      </div>
+    </div>
+    <script>
+      function showPic(self) {
+        var href = self.getAttribute("href");
+        var myimage = document.getElementById("myimage");
+        myimage.setAttribute("src", href);
+      }
+    </script>
+</body>
+
+</html>
